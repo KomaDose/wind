@@ -268,7 +268,6 @@ public partial class player : CharacterBody2D
 		}
 
 		Velocity = velocity;
-		//Shut yo bitch ass up bitch
 		MoveAndSlide();
 	}
 }

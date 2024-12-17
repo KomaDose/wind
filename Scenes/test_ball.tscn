@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjgoi6073buh1"]
+
+[ext_resource type="Script" path="res://Scripts/TestBall.cs" id="1_rm3ou"]
+[ext_resource type="Texture2D" uid="uid://rl2qwvdjxi3" path="res://Assests/fos.png" id="1_w3qh8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xvsoi"]
+friction = 0.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f257n"]
+radius = 8.0
+
+[node name="Test Ball" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+mass = 0.75
+physics_material_override = SubResource("PhysicsMaterial_xvsoi")
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_rm3ou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.392699
+shape = SubResource("CircleShape2D_f257n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w3qh8")

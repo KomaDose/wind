@@ -268,7 +268,7 @@ public partial class player : CharacterBody2D
 		}
 
 		Velocity = velocity;
-		//So like what now
+		//So like
 		MoveAndSlide();
 	}
 }

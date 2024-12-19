@@ -269,7 +269,7 @@ size = Vector2(6, 18.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c5nu"]
 size = Vector2(6, 18.5)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("hSuckPart", "hBlowPart", "uSuckPart", "uBlowPart", "dSuckPart", "dBlowPart")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("hSuckPart", "hBlowPart", "uSuckPart", "uBlowPart", "dBlowPart", "dSuckPart")]
 position = Vector2(0, -2)
 scale = Vector2(2, 2)
 script = ExtResource("1_kdcc6")
@@ -277,8 +277,8 @@ hSuckPart = NodePath("Pivot/Hori Suck Particles")
 hBlowPart = NodePath("Pivot/Hori Blow Particles")
 uSuckPart = NodePath("Pivot/Up Suck Particles")
 uBlowPart = NodePath("Pivot/Up Blow Particles")
-dSuckPart = NodePath("Pivot/Down Suck Particles")
 dBlowPart = NodePath("Pivot/Down Blow Particles")
+dSuckPart = NodePath("Pivot/Down Suck Particles")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

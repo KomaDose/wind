@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://d5gpucg7h7bn"]
+[gd_scene load_steps=22 format=4 uid="uid://d5gpucg7h7bn"]
 
 [ext_resource type="Texture2D" uid="uid://y1xowpxfl6j1" path="res://Assests/Tiles.png" id="1_3cwyu"]
 [ext_resource type="PackedScene" uid="uid://b6lioletbhvpc" path="res://Scenes/player.tscn" id="3_51er7"]
@@ -284,22 +284,25 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_ul50d")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_heuuc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcl2k"]
 size = Vector2(16, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nck1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpoiy"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3axhb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ipih"]
 size = Vector2(384, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_th8pr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24son"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vilgy"]
 size = Vector2(16, 80)
 
 [node name="Main" type="Node"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD4/wEAAAAEAAIAAAD5/wEAAAAEAAIAAAD6/wEAAAAEAAIAAAD7/wEAAAAEAAIAAAD8/wEAAAAEAAIAAAD9/wEAAAAEAAIAAAD+/wEAAAAEAAIAAAD//wEAAAAEAAIAAAAAAAEAAAAEAAIAAAABAAEAAAAEAAIAAAACAAEAAAAEAAIAAAADAAEAAAAEAAIAAAAEAAEAAAAEAAIAAAAFAAEAAAAEAAIAAAAGAAEAAAAEAAIAAAAHAAEAAAAEAAIAAAAIAAEAAAAEAAIAAAAJAAEAAAAEAAIAAAAKAAEAAAAEAAIAAAD3/wEAAAAEAAIAAAD2/wEAAAAEAAIAAAD1/wEAAAAEAAIAAAD0/wEAAAAMAAIAAAD0/wAAAAAGAAQAAAD0////AAAGAAQAAAD0//7/AAAGAAQAAAALAAEAAAAOAAIAAAALAAAAAAACAAQAAAALAP//AAACAAQAAAALAP7/AAACAAQAAAALAP3/AAACAAQAAAALAPz/AAACAAQAAAD+//7/AAAEAA4AAAA=")
+tile_map_data = PackedByteArray("AAD4/wEAAAAEAAIAAAD5/wEAAAAEAAIAAAD6/wEAAAAEAAIAAAD7/wEAAAAEAAIAAAD8/wEAAAAEAAIAAAD9/wEAAAAEAAIAAAD+/wEAAAAEAAIAAAD//wEAAAAEAAIAAAAAAAEAAAAEAAIAAAABAAEAAAAEAAIAAAACAAEAAAAEAAIAAAADAAEAAAAEAAIAAAAEAAEAAAAEAAIAAAAFAAEAAAAEAAIAAAAGAAEAAAAEAAIAAAAHAAEAAAAEAAIAAAAIAAEAAAAEAAIAAAAJAAEAAAAEAAIAAAAKAAEAAAAEAAIAAAD3/wEAAAAEAAIAAAD2/wEAAAAEAAIAAAD1/wEAAAAEAAIAAAD0/wEAAAAMAAIAAAD0/wAAAAAGAAQAAAD0////AAAGAAQAAAD0//7/AAAGAAQAAAALAAEAAAAOAAIAAAALAAAAAAACAAQAAAALAP//AAACAAQAAAALAP7/AAACAAQAAAALAP3/AAACAAQAAAALAPz/AAACAAQAAAD+//7/AAAEAA4AAAADAAAAAAAEAAQAAAADAP//AAAEAAQAAAA=")
 tile_set = SubResource("TileSet_ymo61")
 collision_enabled = false
 
@@ -311,28 +314,32 @@ unique_name_in_owner = true
 position = Vector2(-77, -10)
 
 [node name="Test Ball" parent="." instance=ExtResource("4_5bcb0")]
-position = Vector2(0, -7)
+position = Vector2(119, -36)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0
 script = ExtResource("4_kx21f")
 tilemaplayers_nodepaths = Array[NodePath]([NodePath("../TileMapLayer")])
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-184, -8)
-shape = SubResource("RectangleShape2D_heuuc")
+shape = SubResource("RectangleShape2D_jcl2k")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-24, -24)
-shape = SubResource("RectangleShape2D_5nck1")
+shape = SubResource("RectangleShape2D_hpoiy")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 24)
-shape = SubResource("RectangleShape2D_3axhb")
+shape = SubResource("RectangleShape2D_3ipih")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(56, 0)
+shape = SubResource("RectangleShape2D_24son")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(184, -24)
-shape = SubResource("RectangleShape2D_th8pr")
+shape = SubResource("RectangleShape2D_vilgy")
 
 [node name="Test Ball2" parent="." instance=ExtResource("4_5bcb0")]
 position = Vector2(-100, -28)

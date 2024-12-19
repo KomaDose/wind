@@ -6,8 +6,8 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xvsoi"]
 friction = 0.05
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f257n"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cthwg"]
+size = Vector2(16, 16)
 
 [node name="Test Ball" type="RigidBody2D"]
 collision_layer = 3
@@ -19,8 +19,7 @@ lock_rotation = true
 script = ExtResource("1_rm3ou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 0.392699
-shape = SubResource("CircleShape2D_f257n")
+shape = SubResource("RectangleShape2D_cthwg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_w3qh8")

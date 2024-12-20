@@ -233,7 +233,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Shoot Active",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,7 +292,8 @@ animation = &"Idle Move"
 [node name="Arm Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_aovo5")
-animation = &"Hori Wind Active"
+animation = &"Shoot Active"
+frame_progress = 0.847558
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2(0, 1.5)

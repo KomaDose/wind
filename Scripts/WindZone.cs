@@ -26,7 +26,7 @@ public partial class WindZone : Area2D
 
 	public override void _PhysicsProcess(double delta) {
 		wind = player.aimDirection * windPower;
-		//GD.Print(inWindZone);
+		//windPower = player.bladeNum * 250;
 
 		if (player.aimDirection == Vector2.Down) { //Down
 			hWindZone.Disabled = true;

@@ -292,8 +292,7 @@ animation = &"Idle Move"
 [node name="Arm Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_aovo5")
-animation = &"Shoot Active"
-frame_progress = 0.847558
+animation = &"Idle"
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2(0, 1.5)

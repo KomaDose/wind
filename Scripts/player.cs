@@ -34,8 +34,6 @@ public partial class player : CharacterBody2D
 	bool armActive = false;
 	bool bodyActive = false;
 
-	int bladeNum = 4;
-
 	[Export] GpuParticles2D hSuckPart;
 	[Export] GpuParticles2D hBlowPart;
 	[Export] GpuParticles2D uSuckPart;
@@ -260,6 +258,7 @@ public partial class player : CharacterBody2D
 		wz.inWindMode = windMode;
 
 		//Arm Mode
+		/*
 		if (Input.IsActionJustPressed("switch") && windMode) {
 			windMode = false;
 			shootMode = true;
@@ -268,6 +267,7 @@ public partial class player : CharacterBody2D
 			windMode = true;
 			shootMode = false;
 		}
+		*/
 
 		Velocity = velocity;
 		

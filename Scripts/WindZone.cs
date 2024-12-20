@@ -6,7 +6,7 @@ public partial class WindZone : Area2D
 {
 	player player; 
 	public Vector2 wind;
-	float windPower = 1000; //200 Default
+	float windPower = 800; //200 Default
 
 	public bool blowInput;
 	public bool suckInput;
@@ -26,7 +26,6 @@ public partial class WindZone : Area2D
 
 	public override void _PhysicsProcess(double delta) {
 		wind = player.aimDirection * windPower;
-		//windPower = player.bladeNum * 250;
 
 		if (player.aimDirection == Vector2.Down) { //Down
 			hWindZone.Disabled = true;

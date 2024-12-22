@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b6lioletbhvpc"]
+[gd_scene load_steps=43 format=3 uid="uid://b6lioletbhvpc"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_kdcc6"]
 [ext_resource type="Texture2D" uid="uid://bv0844c2pkuo" path="res://Assests/dinner-Sheet2.png" id="2_laaqi"]
@@ -13,6 +13,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwnvm"]
 size = Vector2(5, 12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkntx"]
+radius = 2.5
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pg4t"]
 atlas = ExtResource("2_laaqi")
@@ -283,6 +287,11 @@ dSuckPart = NodePath("Pivot/Down Suck Particles")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_kwnvm")
+disabled = true
+
+[node name="Player ColShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_bkntx")
 
 [node name="Body Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)

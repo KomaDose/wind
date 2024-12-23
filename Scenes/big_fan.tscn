@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://g1jo3jd1huu7"]
 
-[ext_resource type="Script" path="res://Scenes/big_fan.cs" id="1_jxty8"]
+[ext_resource type="Script" path="res://Scripts/big_fan.cs" id="1_jxty8"]
 [ext_resource type="Texture2D" uid="uid://is6bxbl8fnc3" path="res://Assests/Big Fan.png" id="1_v4hef"]
 [ext_resource type="Script" path="res://Scripts/f_wind_zone.cs" id="2_xu45r"]
 

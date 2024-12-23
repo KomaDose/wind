@@ -25,7 +25,7 @@ public partial class player : CharacterBody2D
 	public bool windMode = true;
 	public bool shootMode = false;
 
-	WindZone wz;
+	a_wind_zone awz;
 
 	Node2D pivot;
 
@@ -44,7 +44,7 @@ public partial class player : CharacterBody2D
     public override void _Ready()
     {
 		pivot = GetNode<Node2D>("Pivot");
-		wz = GetNode<WindZone>("Pivot/Area2D");
+		awz = GetNode<a_wind_zone>("Pivot/Wind Zones");
 
 		bodySprite = GetNode<AnimatedSprite2D>("Body Sprite");
 		armSprite = GetNode<AnimatedSprite2D>("Arm Sprite");
@@ -253,9 +253,9 @@ public partial class player : CharacterBody2D
 		}
 
 		//Wind Manager
-		wz.blowInput = Input.IsActionPressed("blow");
-		wz.suckInput = Input.IsActionPressed("suck");
-		wz.inWindMode = windMode;
+		awz.blowInput = Input.IsActionPressed("blow");
+		awz.suckInput = Input.IsActionPressed("suck");
+		awz.inWindMode = windMode;
 
 		//Arm Mode
 		/*

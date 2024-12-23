@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://d5gpucg7h7bn"]
+[gd_scene load_steps=27 format=4 uid="uid://d5gpucg7h7bn"]
 
 [ext_resource type="Texture2D" uid="uid://y1xowpxfl6j1" path="res://Assests/Tiles.png" id="1_3cwyu"]
 [ext_resource type="PackedScene" uid="uid://b6lioletbhvpc" path="res://Scenes/player.tscn" id="3_51er7"]
 [ext_resource type="PackedScene" uid="uid://cjgoi6073buh1" path="res://Scenes/test_ball.tscn" id="4_5bcb0"]
 [ext_resource type="Script" path="res://Scripts/tilemap_baking.gd" id="4_kx21f"]
+[ext_resource type="PackedScene" uid="uid://g1jo3jd1huu7" path="res://Scenes/big_fan.tscn" id="5_3y6vs"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0n2qk"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -374,3 +375,13 @@ position = Vector2(-100, -28)
 
 [node name="Test Ball3" parent="." instance=ExtResource("4_5bcb0")]
 position = Vector2(-23, -59)
+
+[node name="Big Fan" parent="." instance=ExtResource("5_3y6vs")]
+position = Vector2(-144, 28)
+rotation = -1.5708
+facingDirection = Vector2(0, -1)
+
+[node name="Big Fan2" parent="." instance=ExtResource("5_3y6vs")]
+position = Vector2(-45, 2)
+rotation = -3.14159
+facingDirection = Vector2(-1, 0)

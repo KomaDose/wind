@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_kdcc6"]
 [ext_resource type="Texture2D" uid="uid://bv0844c2pkuo" path="res://Assests/dinner-Sheet2.png" id="2_laaqi"]
-[ext_resource type="Script" path="res://Scripts/WindZone.cs" id="3_ksw22"]
+[ext_resource type="Script" path="res://Scripts/a_wind_zone.cs" id="3_ksw22"]
 [ext_resource type="Texture2D" uid="uid://cyd4vsgcbuuvu" path="res://Assests/dinner-Sheet.png" id="3_oguos"]
 [ext_resource type="Material" uid="uid://cwrv888dr7uyh" path="res://Assests/hori_wind_blow_particles.tres" id="4_y41ju"]
 [ext_resource type="Material" uid="uid://dyyt3ye1pb3i6" path="res://Assests/up_wind_blow_particles.tres" id="5_ma76v"]
@@ -365,7 +365,7 @@ local_coords = true
 trail_lifetime = 0.05
 trail_sections = 2
 
-[node name="Area2D" type="Area2D" parent="Pivot" node_paths=PackedStringArray("hWindZone", "uWindZone", "dWindZone")]
+[node name="Wind Zones" type="Area2D" parent="Pivot" node_paths=PackedStringArray("hWindZone", "uWindZone", "dWindZone")]
 position = Vector2(0, -1.5)
 collision_layer = 2
 collision_mask = 2
@@ -374,17 +374,17 @@ hWindZone = NodePath("HWind Zone")
 uWindZone = NodePath("UWind Zone")
 dWindZone = NodePath("DWind Zone")
 
-[node name="HWind Zone" type="CollisionShape2D" parent="Pivot/Area2D"]
+[node name="HWind Zone" type="CollisionShape2D" parent="Pivot/Wind Zones"]
 position = Vector2(12.75, 1.5)
 shape = SubResource("RectangleShape2D_xaf1h")
 
-[node name="UWind Zone" type="CollisionShape2D" parent="Pivot/Area2D"]
+[node name="UWind Zone" type="CollisionShape2D" parent="Pivot/Wind Zones"]
 position = Vector2(0.5, -15.75)
 shape = SubResource("RectangleShape2D_d4lnb")
 
-[node name="DWind Zone" type="CollisionShape2D" parent="Pivot/Area2D"]
+[node name="DWind Zone" type="CollisionShape2D" parent="Pivot/Wind Zones"]
 position = Vector2(0.5, 14.75)
 shape = SubResource("RectangleShape2D_6c5nu")
 
-[connection signal="body_entered" from="Pivot/Area2D" to="Pivot/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Pivot/Area2D" to="Pivot/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Pivot/Wind Zones" to="Pivot/Wind Zones" method="_on_body_entered"]
+[connection signal="body_exited" from="Pivot/Wind Zones" to="Pivot/Wind Zones" method="_on_body_exited"]

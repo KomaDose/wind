@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class WindZone : Area2D
+public partial class a_wind_zone : Area2D
 {
 	player player; 
 	public Vector2 wind;

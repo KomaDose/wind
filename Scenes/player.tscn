@@ -1,8 +1,8 @@
 [gd_scene load_steps=43 format=3 uid="uid://b6lioletbhvpc"]
 
-[ext_resource type="Script" path="res://Scripts/player.cs" id="1_kdcc6"]
+[ext_resource type="Script" uid="uid://bq55vhvp6m8ax" path="res://Scripts/player.cs" id="1_kdcc6"]
 [ext_resource type="Texture2D" uid="uid://bv0844c2pkuo" path="res://Assests/dinner-Sheet2.png" id="2_laaqi"]
-[ext_resource type="Script" path="res://Scripts/a_wind_zone.cs" id="3_ksw22"]
+[ext_resource type="Script" uid="uid://dvj1gcr08x0ev" path="res://Scripts/a_wind_zone.cs" id="3_ksw22"]
 [ext_resource type="Texture2D" uid="uid://cyd4vsgcbuuvu" path="res://Assests/dinner-Sheet.png" id="3_oguos"]
 [ext_resource type="Material" uid="uid://cwrv888dr7uyh" path="res://Assests/hori_wind_blow_particles.tres" id="4_y41ju"]
 [ext_resource type="Material" uid="uid://dyyt3ye1pb3i6" path="res://Assests/up_wind_blow_particles.tres" id="5_ma76v"]
@@ -313,60 +313,60 @@ position = Vector2(0, 1.5)
 position = Vector2(3.5, 0)
 emitting = false
 amount = 30
-process_material = ExtResource("4_y41ju")
 visibility_rect = Rect2(-1.95498, -4.5822, 27.8228, 9.38612)
 local_coords = true
 trail_lifetime = 0.05
 trail_sections = 2
+process_material = ExtResource("4_y41ju")
 
 [node name="Hori Suck Particles" type="GPUParticles2D" parent="Pivot"]
 position = Vector2(27, 0)
 emitting = false
 amount = 30
-process_material = ExtResource("5_t7u2e")
 visibility_rect = Rect2(-25.9662, -4.25945, 27.949, 8.71114)
 local_coords = true
 trail_lifetime = 0.05
+process_material = ExtResource("5_t7u2e")
 
 [node name="Up Blow Particles" type="GPUParticles2D" parent="Pivot"]
 position = Vector2(0.5, -8)
 emitting = false
 amount = 30
-process_material = ExtResource("5_ma76v")
 visibility_rect = Rect2(-1.95498, -4.5822, 27.8228, 9.38612)
 local_coords = true
 trail_lifetime = 0.05
 trail_sections = 2
+process_material = ExtResource("5_ma76v")
 
 [node name="Up Suck Particles" type="GPUParticles2D" parent="Pivot"]
 position = Vector2(0.5, -31.5)
 emitting = false
 amount = 30
-process_material = ExtResource("7_hn3fx")
 visibility_rect = Rect2(-1.95498, -4.5822, 27.8228, 9.38612)
 local_coords = true
 trail_lifetime = 0.05
 trail_sections = 2
+process_material = ExtResource("7_hn3fx")
 
 [node name="Down Blow Particles" type="GPUParticles2D" parent="Pivot"]
 position = Vector2(0.5, 4)
 emitting = false
 amount = 30
-process_material = ExtResource("8_ysi3u")
 visibility_rect = Rect2(-1.95498, -4.5822, 27.8228, 9.38612)
 local_coords = true
 trail_lifetime = 0.05
 trail_sections = 2
+process_material = ExtResource("8_ysi3u")
 
 [node name="Down Suck Particles" type="GPUParticles2D" parent="Pivot"]
 position = Vector2(0.5, 27.5)
 emitting = false
 amount = 30
-process_material = ExtResource("9_uwv08")
 visibility_rect = Rect2(-1.95498, -4.5822, 27.8228, 9.38612)
 local_coords = true
 trail_lifetime = 0.05
 trail_sections = 2
+process_material = ExtResource("9_uwv08")
 
 [node name="Wind Zones" type="Area2D" parent="Pivot" node_paths=PackedStringArray("hWindZone", "uWindZone", "dWindZone")]
 position = Vector2(0, -1.5)

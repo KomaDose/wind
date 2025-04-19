@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://g1jo3jd1huu7"]
+[gd_scene load_steps=17 format=3 uid="uid://g1jo3jd1huu7"]
 
 [ext_resource type="Script" path="res://Scripts/big_fan.cs" id="1_jxty8"]
 [ext_resource type="Texture2D" uid="uid://is6bxbl8fnc3" path="res://Assests/Big Fan.png" id="1_v4hef"]
 [ext_resource type="Script" path="res://Scripts/f_wind_zone.cs" id="2_xu45r"]
+[ext_resource type="Material" uid="uid://oxhdjpxv6ymk" path="res://Assests/fan_particles.tres" id="4_6may3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gskni"]
 size = Vector2(8, 28)
@@ -107,6 +108,15 @@ script = ExtResource("2_xu45r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind Zone"]
 position = Vector2(39, 0)
 shape = SubResource("RectangleShape2D_aln4b")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(2, 0)
+amount = 60
+process_material = ExtResource("4_6may3")
+lifetime = 1.75
+visibility_rect = Rect2(-1.70452, -18.4073, 81.0868, 34.571)
 
 [connection signal="body_entered" from="Wind Zone" to="Wind Zone" method="_on_body_entered"]
 [connection signal="body_exited" from="Wind Zone" to="Wind Zone" method="_on_body_exited"]

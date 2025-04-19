@@ -41,6 +41,12 @@ public partial class player : CharacterBody2D
 	[Export] GpuParticles2D dBlowPart;
 	[Export] GpuParticles2D dSuckPart;
 
+	PackedScene blades = GD.Load<PackedScene>("res://Scenes/fan_blade.tscn");
+
+	[Export] Node2D bladeUpSpawn;
+	[Export] Node2D bladeDownSpawn;
+	[Export] Node2D bladeHoriSpawn;
+
     public override void _Ready()
     {
 		pivot = GetNode<Node2D>("Pivot");
@@ -122,11 +128,25 @@ public partial class player : CharacterBody2D
 			}
 
 			armActive = true;
+			
 		}
-		else if (Input.IsActionPressed("blow") && shootMode) {
-			armSprite.Play("Shoot Active");
+		/*else if (Input.IsActionJustPressed("shoot") && shootMode) {
+			if (aimDirection == facingDirection) {
+				armSprite.Play("");
+				_Shoot(bladeHoriSpawn);
+			}
+			else if (aimDirection == Vector2.Up) {
+				armSprite.Play("");
+				_Shoot(bladeUpSpawn);
+			}
+			else if (aimDirection == Vector2.Down) {
+				armSprite.Play("");
+				_Shoot(bladeDownSpawn);
+			}
+			//armSprite.Play("Shoot Active");
 			armActive = true;
 		}
+		*/
 		else {
 			if (bodyActive) {
 				armSprite.Play("Idle");
@@ -201,14 +221,14 @@ public partial class player : CharacterBody2D
 		}
 
 		//Flips and Rotations
-		if (direction.X < 0 && !Input.IsActionPressed("blow") && !Input.IsActionPressed("suck")) {
+		if (direction.X < 0 && ((!Input.IsActionPressed("blow") && !Input.IsActionPressed("suck")) || shootMode)) {
 			facingDirection = Vector2.Left;
 			bodySprite.FlipH = true;
 			armSprite.FlipH = true;
 			//pivot.Rotation = Mathf.DegToRad(180);
 			pivot.Scale = new Vector2(-1, 1);
 		}
-		else if (direction.X > 0 && !Input.IsActionPressed("blow") && !Input.IsActionPressed("suck")) {
+		else if (direction.X > 0 && ((!Input.IsActionPressed("blow") && !Input.IsActionPressed("suck")) || shootMode)) {
 			facingDirection = Vector2.Right;
 			bodySprite.FlipH = false;
 			armSprite.FlipH = false;
@@ -217,7 +237,7 @@ public partial class player : CharacterBody2D
 		}
 
 		//Aim Direction
-		if (Input.IsActionPressed("blow") || Input.IsActionPressed("suck")) {
+		if ((Input.IsActionPressed("blow") || Input.IsActionPressed("suck")) && windMode) {
 			AimLocked = true;
 		}
 		else {
@@ -259,11 +279,11 @@ public partial class player : CharacterBody2D
 
 		//Arm Mode
 		/*
-		if (Input.IsActionJustPressed("switch") && windMode) {
+		if (Input.IsActionJustPressed("shoot") && windMode) {
 			windMode = false;
 			shootMode = true;
 		}
-		else if (Input.IsActionJustPressed("switch") && shootMode) {
+		else if ((Input.IsActionJustPressed("blow") || Input.IsActionJustPressed("suck")) && shootMode) {
 			windMode = true;
 			shootMode = false;
 		}
@@ -272,5 +292,22 @@ public partial class player : CharacterBody2D
 		Velocity = velocity;
 		
 		MoveAndSlide();
+	}
+
+	void _Shoot(Node2D bladeSpawnPoint) {
+		fan_blade blade = (fan_blade)blades.Instantiate();
+		AddChild(blade);
+		blade.Position = bladeSpawnPoint.Position;
+		blade.direction = aimDirection;
+
+		if (bladeSpawnPoint == bladeHoriSpawn) {
+			blade.Rotation = Mathf.DegToRad(0);
+		}
+		else if (bladeSpawnPoint == bladeUpSpawn) {
+			blade.Rotation = Mathf.DegToRad(-90);
+		}
+		else if (bladeSpawnPoint == bladeDownSpawn) {
+			blade.Rotation = Mathf.DegToRad(90);
+		}
 	}
 }
